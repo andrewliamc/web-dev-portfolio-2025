@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 
 const Navbar = () => {
@@ -9,12 +9,14 @@ const Navbar = () => {
 
     return (
         <nav className="flex items-center justify-between py-4 px-6 relative">
-            {/* Brand / Logo */}
+            {/* Logo/Brand */}
             <div className="text-xl font-bold">
-                <Link to="/">YourCompany</Link>
+                <NavLink to="/" end>
+                    YourCompany
+                </NavLink>
             </div>
 
-            {/* Hamburger icon (shown on mobile) */}
+            {/* Hamburger icon for mobile */}
             <button
                 className="md:hidden text-white text-2xl focus:outline-none"
                 onClick={toggleMenu}
@@ -24,21 +26,65 @@ const Navbar = () => {
             </button>
 
             {/* Navigation Links */}
-            <ul className={`bg-[#0b0d26] md:bg-transparent md:flex md:items-center md:static absolute md:relative w-full md:w-auto left-0 top-16 md:top-auto transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"}`}>
+            <ul
+                className={`bg-[#0b0d26] md:bg-transparent md:flex md:items-center md:static absolute md:relative w-full md:w-auto left-0 top-16 md:top-auto transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"
+                    }`}
+            >
                 <li className="md:mx-2 p-2 md:p-0 text-center">
-                    <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+                    <NavLink
+                        to="/"
+                        end
+                        onClick={() => setIsOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-gray-300 underline" : "hover:text-gray-300"
+                        }
+                    >
+                        Home
+                    </NavLink>
                 </li>
                 <li className="md:mx-2 p-2 md:p-0 text-center">
-                    <Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link>
+                    <NavLink
+                        to="/about"
+                        onClick={() => setIsOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-gray-300 underline" : "hover:text-gray-300"
+                        }
+                    >
+                        About Us
+                    </NavLink>
                 </li>
                 <li className="md:mx-2 p-2 md:p-0 text-center">
-                    <Link to="/services" onClick={() => setIsOpen(false)}>Services</Link>
+                    <NavLink
+                        to="/services"
+                        onClick={() => setIsOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-gray-300 underline" : "hover:text-gray-300"
+                        }
+                    >
+                        Services
+                    </NavLink>
                 </li>
                 <li className="md:mx-2 p-2 md:p-0 text-center">
-                    <Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
+                    <NavLink
+                        to="/blog"
+                        onClick={() => setIsOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-gray-300 underline" : "hover:text-gray-300"
+                        }
+                    >
+                        Blog
+                    </NavLink>
                 </li>
                 <li className="md:mx-2 p-2 md:p-0 text-center">
-                    <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+                    <NavLink
+                        to="/contact"
+                        onClick={() => setIsOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-gray-300 underline" : "hover:text-gray-300"
+                        }
+                    >
+                        Contact
+                    </NavLink>
                 </li>
             </ul>
         </nav>

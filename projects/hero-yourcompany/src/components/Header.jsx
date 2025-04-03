@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -7,18 +8,24 @@ const Header = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
                 The best way to <br className="hidden md:block" /> promote business
             </h1>
-            <p className="text-gray-300 max-w-2xl mb-6 font-light">
+            <p className="text-gray-300 max-w-2xl mb-6">
                 There are many variations of passages of Lorem Ipsum available, but the
                 majority have suffered alteration in some form, by injected humour, or
                 randomised words which don't look even slightly believable.
             </p>
-            <div className="flex flex-wrap space-x-4">
-                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded text-white font-semibold">
+            <div className="flex space-x-4">
+                <Link
+                    to="/about"
+                    className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded text-white font-semibold"
+                >
                     Discover More
-                </button>
-                <button className="border border-gray-500 px-6 py-2 rounded text-white font-semibold hover:bg-gray-700">
+                </Link>
+                <Link
+                    to="/services"
+                    className="border border-gray-500 px-6 py-2 rounded text-white font-semibold hover:bg-gray-700"
+                >
                     Explore Services →
-                </button>
+                </Link>
             </div>
         </header>
     );
