@@ -77,7 +77,7 @@ const Contact = () => {
                             id="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md text-black"
+                            className="w-full p-2 border border-gray-300 rounded-md text-white"
                             required
                         />
                     </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md text-black"
+                            className="w-full p-2 border border-gray-300 rounded-md text-white"
                             required
                         />
                     </div>
@@ -104,7 +104,7 @@ const Contact = () => {
                             id="message"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md text-black"
+                            className="w-full p-2 border border-gray-300 rounded-md text-white"
                             rows="5"
                             required
                         ></textarea>
